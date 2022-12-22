@@ -109,7 +109,7 @@ Queries.insertVehiclePassMetrics = async (metricDetails) => {
 
 Queries.getTollBoothMetrics = async () => {
 	let getTollBoothMetricsQueryText = `
-		SELECT toll_booth, name, COUNT(*) AS total_vehicles, SUM(amount) AS total_revenue
+		SELECT toll_booth, COUNT(*) AS total_vehicles, SUM(amount_paid) AS total_revenue
 		FROM public.toll_tracking
 		GROUP BY toll_booth
 	;`;
